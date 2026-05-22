@@ -1,12 +1,12 @@
 package view;
 import javax.swing.*;
 import java.awt.*;
-public class PersonneForm extends JFrame {
+public class PersonneFrom extends JFrame {
     // Déclaration des composants
     private JTextField txtId, txtNom, txtPrenom, txtAge, txtAdresse, txtPhone, txtDateNaiss,
             txtCreatedAt, txtUpdatedAt;
     private JButton btnEnregistrer;
-    public PersonneForm() {
+    public PersonneFrom() {
 // Configuration de la fenêtre
         setTitle("Formulaire Personne");
         setSize(400, 500);
@@ -60,7 +60,7 @@ public class PersonneForm extends JFrame {
     public static void main(String[] args) {
 // Lancement de l'interface
         SwingUtilities.invokeLater(() -> {
-            new PersonneForm().setVisible(true);
+            new PersonneFrom().setVisible(true);
         });
     }
 }

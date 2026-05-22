@@ -1,40 +1,37 @@
 package entiter;
+
 import java.util.Date;
 
-public class ComptePayant extends Compte{
-    private float verser;
-    private float retirer;
-    private String toString;
+public class ComptePayant extends Compte {
 
-    public float getVerser() {
-        return verser;
+    public ComptePayant(int id, float solde) {
+
+        super(id, solde, new Date(), new Date());
     }
 
-    public void setVerser(float verser) {
-        this.verser = verser;
+    public void verser(float montant) {
+
+        if (montant > 0) {
+
+            this.setSolde(this.getSolde() + montant);
+        }
     }
 
-    public float getRetirer() {
-        return retirer;
+    public void retirer(float montant) {
+
+        if (montant > 0 && this.getSolde() >= montant) {
+
+            this.setSolde(this.getSolde() - montant);
+        }
     }
 
-    public void setRetirer(float retirer) {
-        this.retirer = retirer;
-    }
+    @Override
+    public String toString() {
 
-    public String getToString() {
-        return toString;
-    }
-
-    public void setToString(String toString) {
-        this.toString = toString;
-    }
-
-    public ComptePayant(int code, float solde, int nbCompte, Date createdDate, Date updated, float verser, float retirer, String toString) {
-        super(code, solde, nbCompte, createdDate, updated);
-        this.verser = verser;
-        this.retirer = retirer;
-        this.toString = toString;
+        return "ComptePayant [ID="
+                + this.getId()
+                + ", Solde="
+                + this.getSolde()
+                + "]";
     }
 }
-

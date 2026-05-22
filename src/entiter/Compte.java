@@ -1,57 +1,48 @@
 package entiter;
+
 import java.util.Date;
-public class Compte {
-    private int code;
+
+public class Compte{
+
+    private int id;
     private float solde;
-    private int nbCompte;
-    private Date createdDate;
-    private Date updated;
+    private Date dateCreation;
+    private Date dateModification;
 
-    public int getCode() {
-        return code;
+    // Constructeur
+    public Compte(int id,
+                  float solde,
+                  Date dateCreation,
+                  Date dateModification) {
+
+        this.id = id;
+        this.solde = solde;
+        this.dateCreation = dateCreation;
+        this.dateModification = dateModification;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    // Getter ID
+    public int getId() {
+        return id;
     }
 
+    // Getter Solde
     public float getSolde() {
         return solde;
     }
 
+    // Setter Solde
     public void setSolde(float solde) {
         this.solde = solde;
     }
 
-    public int getNbCompte() {
-        return nbCompte;
-    }
+    @Override
+    public String toString() {
 
-    public void setNbCompte(int nbCompte) {
-        this.nbCompte = nbCompte;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public Date getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
-
-    public Compte(int code, float solde, int nbCompte, Date createdDate, Date updated) {
-        this.code = code;
-        this.solde = solde;
-        this.nbCompte = nbCompte;
-        this.createdDate = createdDate;
-        this.updated = updated;
+        return "Compte [ID="
+                + id
+                + ", Solde="
+                + solde
+                + "]";
     }
 }
