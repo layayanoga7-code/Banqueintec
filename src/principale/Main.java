@@ -83,7 +83,8 @@ public class Main {
         System.out.println(CPS5);
         System.out.println(CPS6);
 
-        // ======================= ==
+        // =======================
+        // \==
         // Personnes
         // =========================
 
